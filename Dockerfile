@@ -23,8 +23,15 @@ USER user
 RUN opam init -a
 RUN opam install depext
 RUN opam depext --yes frama-c
-RUN opam install --yes frama-c
+RUN opam depext --yes coq
 
-CMD bash -l -c frama-c-gui
+RUN opam install --yes altgr-ergo coq coqide why3
+
+RUN opam depext --yes frama-c
+
+WORKDIR /home/user/files
+CMD bash -l
+#CMD bash -l -c "frama-c-gui"
+
 
 
