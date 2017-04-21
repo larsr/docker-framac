@@ -27,7 +27,7 @@ RUN opam depext --yes coq
 
 RUN opam install --yes altgr-ergo coq coqide why3
 
-RUN opam depext --yes frama-c
+RUN opam install --yes frama-c
 
 WORKDIR /home/user/files
 CMD bash -l
