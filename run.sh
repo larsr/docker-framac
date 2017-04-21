@@ -14,4 +14,4 @@ socat TCP-LISTEN:6000,reuseaddr,fork,bind=$HOSTIP,range=$HOSTIP/32 UNIX-CLIENT:\
 # kill child process when this script ends
 trap 'trap - SIGTERM && kill -- -$$' SIGINT SIGTERM EXIT
 
-docker run -ti -P -e DISPLAY=$HOSTIP:0 --rm -ti frama
+docker run -ti -P -e DISPLAY=$HOSTIP:0 --rm -v $(pwd)/files:/home/user/files -ti frama
